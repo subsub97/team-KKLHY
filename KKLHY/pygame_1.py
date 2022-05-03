@@ -1,13 +1,13 @@
 import pygame
 
-pygame.init() #초기화ㅓ
+pygame.init() #초기화
 # 화면 크기 설정
 screen_width = 1200 # 가로크기
 screen_height = 800 #세로크기
 screen = pygame.display.set_mode((screen_width, screen_height))
 
 # 배경 이미지 불러오기
-background = pygame.image.load("C:/Users/HO/Git/OS_KKLHY/KKLHY/background.png")
+background = pygame.image.load("") # 경로
 
 #화면 타이틀 설정
 pygame.display.set_caption("pluma") # 게임 이름
