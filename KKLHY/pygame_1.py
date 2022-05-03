@@ -7,7 +7,7 @@ screen_height = 800 #세로크기
 screen = pygame.display.set_mode((screen_width, screen_height))
 
 # 배경 이미지 불러오기
-background = pygame.image.load("") # 경로
+background = pygame.image.load("/Users/hwangbyeonghun/Desktop/Open Source/img.png") # 경로
 
 #화면 타이틀 설정
 pygame.display.set_caption("pluma") # 게임 이름
