@@ -35,5 +35,5 @@ while running:
 
   pygame.display.update() # 게임화면을 다시 그리기!
 
-# pygame 종료
+# pygame 종료!
 pygame.quit()
