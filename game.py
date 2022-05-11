@@ -1,3 +1,5 @@
+#전병환 교수입니다. 팀활동 잘 진행되고 있네요. 응원합니다.
+
 import pygame
 import os
 import random
