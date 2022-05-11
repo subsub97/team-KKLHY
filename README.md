@@ -1,0 +1,15 @@
+### Team-KKLHY
+오픈소스 1팀 프로젝트 저장소<br>
+
+## 1팀 사이드프로젝트를 소개합니다.
+
+pygame 라이브러리와 git 을 사용해 게임을 개발하고 있습니다.<br>
+게임은 크게 3가지 부분으로 나누어집니다.<br>
+
+#0. START PAGE & Record<br>
+#1. ITEM STAGE<br>
+#2. MID EXAM STAGE<br>
+#3. FIN EXAM STAGE<br>
+
+
+상세한 설명은 해당 프로젝트 진행에 맞게 작성할 예정입니다. 감사합니다.
