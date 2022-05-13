@@ -40,17 +40,28 @@ teacher_height = teacher_size[1]
 teacher_x_pos = screen_width - teacher_width
 teacher_y_pos = (screen_height / 2) - (teacher_height / 2)
 
+ball = pygame.image.load(os.path.join(image_path, "ball.png"))
+ball_size = ball.get_rect().size
+ball_width = ball_size[0]
+ball_height = ball_size[1]
+ball_x_pos = screen_width - teacher_width
+ball_y_pos = screen_height/2 - ball_height/2
 
 # 캐릭터 이동 방향
 character_to_x = 0
 character_to_y = 0
 
 # 캐릭터 이동 속도
-character_speed = 10
+character_speed = 5
 
 # teacher 움직이기
 to_y_teacher = 0
-random_teacher = random.randrange(0, screen_height - teacher_height)
+random_teacher = 600
+
+ball_time = 0
+balls = []
+random_time = random.randrange(100, 200)
+
 
 running = True  # 게임이 진행중인가?
 while running:
@@ -100,11 +111,28 @@ while running:
     elif random_teacher < teacher_y_pos:
         teacher_y_pos -= 10
     else:
-        random_teacher = random.randrange(0, screen_height - teacher_height)
+        if random_teacher == 600:
+            random_teacher = 0
+        else:
+            random_teacher = 600
+
+    ball_time += 1
+    if ball_time == random_time:
+        random_time = random.randrange(100, 200)
+        ball_time = 0
+        ball_y_pos = teacher_y_pos + ball_height/2
+        balls.append([ball_x_pos, ball_y_pos])
 
     screen.blit(background, (0, 0))
     screen.blit(character, (character_x_pos, character_y_pos))
     screen.blit(teacher, (teacher_x_pos, teacher_y_pos))
+
+    if len(balls):
+        for ball2 in balls:
+            ball2[0] -= 3
+            screen.blit(ball, (ball2[0], ball2[1]))
+            if ball2[0] <= 0:
+                balls.remove(ball2)
 
     pygame.display.update()
 
