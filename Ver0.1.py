@@ -1,5 +1,12 @@
 import pygame
 
+
+# 구현해야할 것!!!
+''' 한 화면에 이미지 같은 여러가지 띄울 수 있게!
+클래스, 함수 (객체) 공부 및 구현'''
+#sadfghjk
+
+print("A")
 pygame.init() #초기화
 # 화면 크기 설정
 screen_width = 1200 # 가로크기
