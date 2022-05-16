@@ -33,12 +33,13 @@ item_to_x= 0
 
 # 점수
 score = 0
+
 #이동 속도
 character_speed = 1
 
 # 아이템 추가
 item = pygame.image.load("C:\\Users\\653dl\\KKLHY\\0_image\\Yang\\ball.png")
-item_size = character.get_rect().size # 캐릭터 가로,세로 크기 불러오기
+item_size = character.get_rect().size # 캐릭터 가로, 세로 크기 불러오기
 item_width =character_size[0] # 캐릭터의 가로 크기
 item_height = character_size[1] # 캐릭터의 세로 크기
 item_x_pos = 1300 # random
@@ -46,7 +47,7 @@ item_y_pos = random.randint(0,screen_height -item_height) # random
 item_speed = 10
 
 #폰트 정의
-game_font =pygame.font.Font(None, 40) # 폰트 객체  생성(폰트,크기)
+game_font =pygame.font.Font(None, 40) # 폰트 객체 생성(폰트,크기)
 
 # 총 시간 (총시간을 이용하면 타이머 생성가능)
 total_time = 10
@@ -59,7 +60,6 @@ running = True # 게임이 진행중인가?
 started = False # if 실행 제어조건
 while running:
   dt =clock.tick(60) # 게임화면의 초당 프레임 수를 설정
-
 
   for event in pygame.event.get(): # 어떤 이벤트가 발생하였는가?
     if event.type == pygame.QUIT: #창이 닫히는 이벤트가 발생하였는가?
@@ -74,8 +74,6 @@ while running:
         to_y -= character_speed
       elif event.key == pygame.K_DOWN: #캐릭터를 아래로
         to_y += character_speed
-
-
 
     if event.type == pygame.KEYUP: #방향키를 떼면 멈춤
       if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
