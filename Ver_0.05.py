@@ -1,7 +1,13 @@
 import pygame
 import random
 
+
+# 속도 바꾸기
+# 충돌처리
+# 중복생성
+
 pygame.init()  # 초기화
+
 
 # 화면 크기 설정
 screen_width = 1200  # 가로크기
@@ -39,10 +45,6 @@ class obj:
         rect.top = b.y_pos   # 캐릭터의 y축 정보
         return rect
 
-    def item_list(self,p):
-        item = []
-        item.append(p)
-
     def show(self, k, a, b):
         screen.blit(k, (a, b))  # 배경 그리기
 
@@ -61,14 +63,71 @@ ch.speed = 1  # 이동 속도
 score = 0
 
 # 아이템 설정
-it = obj()
-item = it.img("0_image/Yang/ball.png")
-item_width, item_height = it.img_size(item)  # 아이템의 가로, 세로 크기 설정
-it.x_pos, it.y_pos = 1300, random.randint(0, screen_height - item_height)  # 아이템 위치 설정(random)
-it.speed = 5
+p_it0 = obj()
+p_item0 = p_it0.img("/Users/ho/Git/KKLHY/아이템/아이템/p_it1.png")
+p_item0_width, p_item0_height = p_it0.img_size(p_item0) # 아이템의 가로, 세로 크기 설정
+
+# p_item
+p_it1 = obj()
+p_it2 = obj()
+p_it3 = obj()
+p_item1 = p_it1.img("/Users/ho/Git/KKLHY/아이템/아이템/p_it2.png")
+p_item1_width, p_item1_height = p_it1.img_size(p_item1)  # 아이템의 가로, 세로 크기 설정
+p_it1.x_pos, p_it1.y_pos = 1300, random.randint(0, screen_height - p_item1_height)  # 아이템 위치 설정(random)
+p_it1.speed = 5
+p_item2 = p_it2.img("/Users/ho/Git/KKLHY/아이템/아이템/p_it3.png")
+p_item2_width, p_item2_height = p_it2.img_size(p_item2)  # 아이템의 가로, 세로 크기 설정
+p_it2.x_pos, p_it2.y_pos = 1300, random.randint(0, screen_height - p_item2_height)  # 아이템 위치 설정(random)
+p_it2.speed = 5
+p_item3 = p_it3.img("/Users/ho/Git/KKLHY/아이템/아이템/p_it4.png")
+p_item3_width, p_item3_height = p_it3.img_size(p_item2)  # 아이템의 가로, 세로 크기 설정
+p_it3.x_pos, p_it3.y_pos = 1300, random.randint(0, screen_height - p_item3_height)  # 아이템 위치 설정(random)
+p_it3.speed = 5
+
+# N_item
+N_it1 = obj()
+N_it2 = obj()
+N_it3 = obj()
+N_item1 = N_it1.img("/Users/ho/Git/KKLHY/아이템/아이템/n_it1.png")
+N_item1_width, N_item1_height = N_it1.img_size(N_item1)  # 아이템의 가로, 세로 크기 설정
+N_it1.x_pos, N_it1.y_pos = 1300, random.randint(0, screen_height - N_item1_height)  # 아이템 위치 설정(random)
+N_it1.speed = 5
+N_item2 = p_it1.img("/Users/ho/Git/KKLHY/아이템/아이템/n_it2.png")
+N_item2_width, N_item2_height = N_it2.img_size(N_item2)  # 아이템의 가로, 세로 크기 설정
+N_it2.x_pos, N_it2.y_pos = 1300, random.randint(0, screen_height - N_item2_height)  # 아이템 위치 설정(random)
+N_it2.speed = 5
+N_item3 = p_it1.img("/Users/ho/Git/KKLHY/아이템/아이템/n_it3.png")
+N_item3_width, N_item3_height = N_it3.img_size(N_item3)  # 아이템의 가로, 세로 크기 설정
+N_it3.x_pos, N_it3.y_pos = 1300, random.randint(0, screen_height - N_item3_height)  # 아이템 위치 설정(random)
+N_it3.speed = 5
+
+
+# 아이템 좌표
+p_it0.x_pos, p_it0.y_pos = 1300, random.randint(0, screen_height - p_item0_height)  # 아이템 위치 설정(random)
+p_it1.x_pos, p_it1.y_pos = 1300, random.randint(0, screen_height - p_item1_height)
+p_it2.x_pos, p_it2.y_pos = 1300, random.randint(0, screen_height - p_item2_height)
+p_it3.x_pos, p_it3.y_pos = 1300, random.randint(0, screen_height - p_item3_height)
+N_it1.x_pos, N_it1.y_pos = 1300, random.randint(0, screen_height - N_item1_height)
+N_it2.x_pos, N_it2.y_pos = 1300, random.randint(0, screen_height - N_item2_height)
+N_it3.x_pos, N_it3.y_pos = 1300, random.randint(0, screen_height - N_item3_height)
+
+p_it0.speed = 3
+p_it1.speed = 5
+p_it2.speed = 5
+p_it3.speed = 5
+N_it1.speed = 5
+N_it2.speed = 5
+N_it3.speed = 5
 items = []
-random_time = random.randint(10,20)
+items1 =[]
+items2 =[]
+items3 =[]
+items4 =[]
+items5 =[]
+items6 =[]
+random_time = random.randint(10,150) # 아이템 젠시간 설정
 item_time = 0
+
 
 # 폰트 정의
 game_font = pygame.font.Font(None, 40)  # 폰트 객체  생성(폰트,크기)
@@ -106,7 +165,7 @@ while running:
                 ch.to_y = 0
     ch.x_pos += ch.to_x * dt
     ch.y_pos += ch.to_y * dt
-    it.x_pos += it.to_x
+
 
     # 캐릭터 화면 탈출 방지
     w = screen_width - character_width
@@ -123,46 +182,141 @@ while running:
         ch.y_pos = h
 
     # 아이템 이동처리
-    it.x_pos -= it.speed
+    p_it0.x_pos -= p_it0.speed
+    p_it1.x_pos -= p_it1.speed
+    p_it2.x_pos -= p_it2.speed
+    p_it3.x_pos -= p_it3.speed
+    N_it1.x_pos -= N_it1.speed
+    N_it2.x_pos -= N_it2.speed
+    N_it3.x_pos -= N_it3.speed
     # 아이템이 화면 밖으로 나갔을경우
-    if it.x_pos < 0:
-        it.x_pos = 1300
-        it.y_pos = random.randint(0, screen_height - item_height)
+    if p_it0.x_pos < 0:
+        p_it0.x_pos = 1300
+        p_it0.y_pos = random.randint(0, screen_height - p_item0_height)
 
     # 충돌 처리
     character_rect = ch.rect(character, ch)
-    item_rect = it.rect(item, it)
+    item_rect = p_it0.rect(p_item0, p_it0)
 
     # 충돌 체크
     if character_rect.colliderect(item_rect):  # colliderect함수는 사각형 부분이 () 안의 값과 충동이 있었는지 체크하는 함수
         print("충돌했다")
-        it.x_pos = 1300
-        it.y_pos = random.randint(0, screen_height - item_height)
+        p_it0.x_pos = 1300
+        p_it0.y_pos = random.randint(0, screen_height - p_item0_height)
         score += 100
 
     ch.show(background, 0, 0)  # 배경 그리기
     ch.show(character, ch.x_pos, ch.y_pos)  # 캐릭터 그리기
-    it.show(item, it.x_pos, it.y_pos)  # 아이템 그리기
+    p_it0.show(p_item0, p_it0.x_pos, p_it0.y_pos)  # 아이템 그리기
+    p_it1.show(p_item1, p_it1.x_pos, p_it1.y_pos)
+    p_it2.show(p_item2, p_it2.x_pos, p_it2.y_pos)
+    p_it3.show(p_item3, p_it3.x_pos, p_it3.y_pos)
+    N_it1.show(N_item1, N_it1.x_pos, N_it1.y_pos)
+    N_it2.show(N_item2, N_it2.x_pos, N_it2.y_pos)
+    N_it3.show(N_item3, N_it3.x_pos, N_it3.y_pos)
 
+# ---------- 아이템
     item_time += 1
+
     if item_time == random_time:
         item_time = 0
-        items.append([1300, random.randint(0, screen_height - item_height)])
+        items.append([1300, random.randint(0, screen_height - p_item0_height)])
 
     for i in items:
-        i[0] -= it.speed
-        # 충동처리
-        i_rect = item.get_rect()
+        i[0] -= 3
+        # 충돌처리
+        i_rect = p_item0.get_rect()
         i_rect.left = i[0]
         i_rect.top = i[1]
 
-        it.show(item,i[0],i[1])
+        p_it0.show(p_item0,i[0],i[1])
         if i[0] <= 0:
             items.remove(i)
 
         if character_rect.colliderect(i_rect):
             score += 100
             items.remove(i)
+    # p1
+    if item_time == random.randint(10,300):
+        item_time = 0
+        items1.append([1300, random.randint(0, screen_height - p_item1_height)])
+
+    for j in items1:
+        j[0] -= 3
+        # 충돌처리
+        j_rect = p_item1.get_rect()
+        j_rect.left = j[0]
+        j_rect.top = j[1]
+
+        p_it1.show(p_item1,j[0],j[1])
+        if j[0] <= 0:
+            items1.remove(j)
+
+        if character_rect.colliderect(j_rect):
+            score += 100
+            items1.remove(j)
+     # 아이템 p2
+    if item_time == random.randint(10,300):
+        item_time = 0
+        items2.append([1300, random.randint(0, screen_height - p_item2_height)])
+
+    for j in items2:
+        j[0] -= 3
+        # 충돌처리
+        j_rect = p_item2.get_rect()
+        j_rect.left = j[0]
+        j_rect.top = j[1]
+
+        p_it2.show(p_item2,j[0],j[1])
+        if j[0] <= 0:
+            items2.remove(j)
+
+        if character_rect.colliderect(j_rect):
+            score += 100
+            items2.remove(j)
+
+        # p3
+        if item_time == random.randint(10,300):
+            item_time = 0
+            items4.append([1300, random.randint(0, screen_height - N_item1_height)])
+
+        for j in items4:
+            j[0] -= 3
+            # 충돌처리
+            j_rect = N_item1.get_rect()
+            j_rect.left = j[0]
+            j_rect.top = j[1]
+
+            N_it1.show(N_item1, j[0], j[1])
+            if j[0] <= 0:
+                items4.remove(j)
+
+            if character_rect.colliderect(j_rect):
+                score -= 500
+                items4.remove(j)
+        # p5
+        if item_time == random.randint(10,300):
+            item_time = 0
+            items5.append([1300, random.randint(0, screen_height - N_item2_height)])
+
+        for j in items5:
+            j[0] -= 3
+            # 충돌처리
+            j_rect = N_item2.get_rect()
+            j_rect.left = j[0]
+            j_rect.top = j[1]
+
+            N_it2.show(N_item2, j[0], j[1])
+            if j[0] <= 0:
+                items5.remove(j)
+
+            if character_rect.colliderect(j_rect):
+                score -= 100
+                items5.remove(j)
+
+
+ #----------------------------------
+
 
 
 
@@ -177,6 +331,8 @@ while running:
     tscore = game_font.render(str(int(score)), True, (255, 0, 0))
     ch.show(timer, 10, 10)
     ch.show(tscore, 1110, 10)
+
+
 
     # 만약 시간이 0 이하이면 게임 종료
 
