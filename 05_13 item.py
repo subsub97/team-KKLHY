@@ -14,10 +14,10 @@ pygame.display.set_caption("KKLHY") # 게임 이름
 clock = pygame.time.Clock()
 
 # 배경 이미지 불러오기
-background = pygame.image.load("image/background.png")
+background = pygame.image.load("0_image/HO/background.png")
 
 # 캐릭터(스프라이트) 불러오기
-character = pygame.image.load("image/character.png") # 121 / 113
+character = pygame.image.load("0_image/HO/character.png") # 121 / 113
 character_size = character.get_rect().size # 캐릭터 가로,세로 크기 불러오기
 character_width =character_size[0] # 캐릭터의 가로 크기
 character_height = character_size[1] # 캐릭터의 세로 크기
@@ -38,7 +38,7 @@ score = 0
 character_speed = 1
 
 # 아이템 추가
-item = pygame.image.load("image/item.png")
+item = pygame.image.load("0_image/HO/item.png")
 item_size = character.get_rect().size # 캐릭터 가로,세로 크기 불러오기
 item_width =character_size[0] # 캐릭터의 가로 크기
 item_height = character_size[1] # 캐릭터의 세로 크기

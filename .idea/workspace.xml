@@ -5,11 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5812d52a-aaaa-4520-9e25-db93133cc81c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/05_13 item.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/05_08_item.py" beforeDir="false" afterPath="$PROJECT_DIR$/05_08_item.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ball.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pygame_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/pygame_1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yjh.py" beforeDir="false" afterPath="$PROJECT_DIR$/yjh.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ver_0.05.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/05_13 item.py" beforeDir="false" afterPath="$PROJECT_DIR$/05_13 item.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0_image/Yang/ball.png" beforeDir="false" afterPath="$PROJECT_DIR$/0_image/Yang/ball.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ver_0.04.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ver_0.04.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +53,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.05_13 item">
+  <component name="RunManager" selected="Python.Ver_0.05">
     <configuration name="05_13 item" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="KKLHY" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -75,7 +75,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="item_v3_text" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="Ver_0.02py" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="KKLHY" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -87,7 +87,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/item_v3_text.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Ver_0.02py.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -96,7 +96,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="item_v4_random" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="Ver_0.03" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="KKLHY" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -108,7 +108,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/item_v4_random.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Ver_0.03.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -117,7 +117,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="item_v5_score" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="Ver_0.04" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="KKLHY" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -129,7 +129,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/item_v5_score.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Ver_0.04.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -138,7 +138,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="yjh" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="Ver_0.05" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="KKLHY" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -150,7 +150,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/yjh.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Ver_0.05.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -161,11 +161,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Ver_0.05" />
+        <item itemvalue="Python.Ver_0.04" />
+        <item itemvalue="Python.Ver_0.02py" />
+        <item itemvalue="Python.Ver_0.03" />
         <item itemvalue="Python.05_13 item" />
-        <item itemvalue="Python.yjh" />
-        <item itemvalue="Python.item_v5_score" />
-        <item itemvalue="Python.item_v4_random" />
-        <item itemvalue="Python.item_v3_text" />
       </list>
     </recent_temporary>
   </component>

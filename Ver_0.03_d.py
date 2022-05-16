@@ -1,27 +1,11 @@
 import pygame
 import random
-# 중복 아이템 생성
 
 pygame.init() #초기화
 # 화면 크기 설정
 screen_width = 1200 # 가로크기
 screen_height = 800 #세로크기
 screen = pygame.display.set_mode((screen_width, screen_height))
-
-#이동할 좌표
-to_x = 0
-to_y = 0
-
-#아이템 정보 변수
-item_to_x= 0
-item_time = 0
-items = [] # 중복 생성을 위한 리스트
-random_time = random.randrange(10,20) # 아이템 생성속도
-
-# 점수
-score = 0
-#이동 속도
-character_speed = 1
 
 # 화면 타이틀 설정
 pygame.display.set_caption("KKLHY") # 게임 이름
@@ -40,8 +24,20 @@ character_height = character_size[1] # 캐릭터의 세로 크기
 character_x_pos = 0 # 화면 가로의 캐릭터 위치설정
 character_y_pos = -80 + screen_height/2  # 화면 세로의 캐릭터 위치 설정
 
+#이동할 좌표
+to_x = 0
+to_y = 0
+
+#아이템 좌표
+item_to_x= 0
+
+# 점수
+score = 0
+#이동 속도
+character_speed = 1
+
 # 아이템 추가
-item = pygame.image.load("0_image/HO/item.png")# 중복 생성을 위한 리스트화
+item = pygame.image.load("0_image/HO/item.png")
 item_size = character.get_rect().size # 캐릭터 가로,세로 크기 불러오기
 item_width =character_size[0] # 캐릭터의 가로 크기
 item_height = character_size[1] # 캐릭터의 세로 크기
@@ -87,9 +83,9 @@ while running:
       elif event.key == pygame.K_UP or event.key == pygame.K_DOWN:
         to_y = 0
 
-# 캐릭터 , 아이템 이동속도 계산
   character_x_pos += to_x * dt
   character_y_pos += to_y * dt
+  item_x_pos += item_to_x
 
   #캐릭터 화면 탈출 방지
   #가로 경계값 처리
@@ -114,7 +110,6 @@ while running:
       item_y_pos = random.randint(0,screen_height-item_height)
 
 
-
  # 충돌 처리
   character_rect = character.get_rect()
   character_rect.left = character_x_pos #캐릭터의 x축 정보
@@ -130,32 +125,10 @@ while running:
       item_x_pos = 1300
       item_y_pos = random.randint(0, screen_height - item_height)
       score += 100
-  # 화면에 그리기
+
   screen.blit(background,(0,0)) #배경 그리기
   screen.blit(character,(character_x_pos,character_y_pos)) # 캐릭터 그리기
-  screen.blit(item,(item_x_pos,item_y_pos))  # 아이템 그리기
-
-  item_time += 1
-  if item_time == random_time:
-    item_time = 0
-    items.append([1300,random.randint(0,screen_height-item_height)])
-
-  for i in items:
-    i[0] -= item_speed
-    # 충동처리
-    i_rect = item.get_rect()
-    i_rect.left = i[0]
-    i_rect.top = i[1]
-
-    screen.blit(item,(i[0],i[1]))
-    if i[0] <= 0:
-      items.remove(i)
-
-    if character_rect.colliderect(i_rect):
-      score += 100
-      items.remove(i)
-
-
+  screen.blit(item, (item_x_pos, item_y_pos))  # 아이템 그리기
 
   # 타이머 집어 넣기
   # 경과 시간 계산
