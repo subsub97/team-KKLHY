@@ -16,34 +16,26 @@ clock = pygame.time.Clock()
 
 class obj:
     def __init__(self):
-        self.x = 0
-        self.y = 0
+        self.x_pos = 0
+        self.y_pos = 0
+
     def img(self, address):  # 이미지 함수
-        self.img = pygame.image.load(address)   # 이미지 불러오기
-        self.rect = self.image.get_rect()       # 이미지 크기 불러오기
-    def img_size(self, a, b):    # 이미지 크기 설정 함수
-        size = self.img.get_rect().size # 캐릭터 가로,세로 크기 불러오기
-        size_width = character_size[a] # 캐릭터의 가로 크기
-        size_height = character_size[b] # 캐릭터의 세로 크기
-    def show(self):
-        screen.blit(background,(0,0)) #배경 그리기
+        return pygame.image.load(address)   # 이미지 불러오기
 
+    def show(self, k, a, b):
+        screen.blit(k,(a,b)) #배경 그리기
 
+ch = obj()
 
-ob = obj()
+background = ch.img("C:\\Users\\653dl\\KKLHY\\0_image\\Yang\\background.png")  # 배경 이미지 불러오기
 
-ob.img("C:\\Users\\653dl\\KKLHY\\0_image\\Yang\\background.png")  # 배경 이미지 불러오기
-
-ob.img("C:\\Users\\653dl\\KKLHY\\0_image\\Yang\\character.png")   # 캐릭터 이미지 불러오기
-
-# 캐릭터(스프라이트) 불러오기
+# 캐릭터 불러오기
+character = ch.img("C:\\Users\\653dl\\KKLHY\\0_image\\Yang\\character.png")   # 캐릭터 이미지 불러오기
 character_size = character.get_rect().size # 캐릭터 가로,세로 크기 불러오기
 character_width =character_size[0] # 캐릭터의 가로 크기
 character_height = character_size[1] # 캐릭터의 세로 크기
-
-
-character_x_pos = 0 # 화면 가로의 캐릭터 위치설정
-character_y_pos = -80 + screen_height/2  # 화면 세로의 캐릭터 위치 설정
+ch.x_pos = 0 # 화면 가로의 캐릭터 위치설정
+ch.y_pos = -80 + screen_height/2  # 화면 세로의 캐릭터 위치 설정
 
 #이동할 좌표
 to_x = 0
@@ -58,12 +50,13 @@ score = 0
 character_speed = 1
 
 # 아이템 추가
-item = pygame.image.load("C:\\Users\\653dl\\KKLHY\\0_image\\Yang\\ball.png")
+it = obj()
+item = it.img("C:\\Users\\653dl\\KKLHY\\0_image\\Yang\\ball.png")
 item_size = character.get_rect().size # 캐릭터 가로,세로 크기 불러오기
-item_width =character_size[0] # 캐릭터의 가로 크기
-item_height = character_size[1] # 캐릭터의 세로 크기
-item_x_pos = 1300 # random
-item_y_pos = random.randint(0,screen_height -item_height) # random
+item_width = item_size[0] # 캐릭터의 가로 크기
+item_height = item_size[1] # 캐릭터의 세로 크기
+it.x_pos = 1300 # random
+it.y_pos = random.randint(0,screen_height - item_height) # random
 item_speed = 10
 
 #폰트 정의
@@ -104,52 +97,52 @@ while running:
       elif event.key == pygame.K_UP or event.key == pygame.K_DOWN:
         to_y = 0
 
-  character_x_pos += to_x * dt
-  character_y_pos += to_y * dt
-  item_x_pos += item_to_x
+  ch.x_pos += to_x * dt
+  ch.y_pos += to_y * dt
+  it.x_pos += item_to_x
 
   #캐릭터 화면 탈출 방지
   #가로 경계값 처리
-  if character_x_pos <= 0: # = 추가
-    character_x_pos = 0
-  elif character_x_pos >= screen_width - character_width:
-    character_x_pos =screen_width - character_width
+  if ch.x_pos <= 0: # = 추가
+    ch.x_pos = 0
+  elif ch.x_pos >= screen_width - character_width:
+    ch.x_pos =screen_width - character_width
 
 
   #세로 경계값처리
-  if character_y_pos <= 0:
-    character_y_pos = 0
-  elif character_y_pos >= screen_height -character_height:
-    character_y_pos = screen_height - character_height
+  if ch.y_pos <= 0:
+    ch.y_pos = 0
+  elif ch.y_pos >= screen_height -character_height:
+    ch.y_pos = screen_height - character_height
 
   #아이템 이동처리
-  item_x_pos -= item_speed
+  it.x_pos -= item_speed
 
   #아이템이 화면 밖으로 나갔을경우
-  if item_x_pos < 0:
-      item_x_pos = 1300
-      item_y_pos = random.randint(0,screen_height-item_height)
+  if it.x_pos < 0:
+      it.x_pos = 1300
+      it.y_pos = random.randint(0,screen_height-item_height)
 
 
  # 충돌 처리
   character_rect = character.get_rect()
-  character_rect.left = character_x_pos #캐릭터의 x축 정보
-  character_rect.top = character_y_pos # 캐릭터의 y축 정보
+  character_rect.left = ch.x_pos #캐릭터의 x축 정보
+  character_rect.top = ch.y_pos # 캐릭터의 y축 정보
 
   item_rect = item.get_rect()
-  item_rect.left = item_x_pos
-  item_rect.top = item_y_pos
+  item_rect.left = it.x_pos
+  item_rect.top = it.y_pos
 
  # 충돌 체크
   if character_rect.colliderect(item_rect): # colliderect함수는 사각형 부분이 () 안의 값과 충동이 있었는지 체크하는 함수
       print("충돌했다")
-      item_x_pos = 1300
-      item_y_pos = random.randint(0, screen_height - item_height)
+      it.x_pos = 1300
+      it.y_pos = random.randint(0, screen_height - item_height)
       score += 100
 
-  screen.blit(background,(0,0)) #배경 그리기
-  screen.blit(character,(character_x_pos,character_y_pos)) # 캐릭터 그리기
-  screen.blit(item, (item_x_pos, item_y_pos))  # 아이템 그리기
+  ch.show(background,0,0) #배경 그리기
+  ch.show(character,ch.x_pos,ch.y_pos) # 캐릭터 그리기
+  it.show(item,it.x_pos,it.y_pos)  # 아이템 그리기
 
   # 타이머 집어 넣기
   # 경과 시간 계산
