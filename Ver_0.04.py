@@ -21,6 +21,15 @@ class obj:
 
     def img(self, address):  # 이미지 함수
         return pygame.image.load(address)   # 이미지 불러오기
+    
+    def img_size(self, k):  # 이미지 크기
+      k_size = k.get_rect().size # 캐릭터 가로,세로 크기 불러오기
+      k_width = k_size[0]       # 가로 크기
+      k_height = k_size[1]      # 세로 크기
+      return k_width, k_height
+    
+    def pos(self, a, b):
+      return a, b
 
     def show(self, k, a, b):
         screen.blit(k,(a,b)) #배경 그리기
@@ -31,11 +40,8 @@ background = ch.img("C:\\Users\\653dl\\KKLHY\\0_image\\Yang\\background.png")  #
 
 # 캐릭터 불러오기
 character = ch.img("C:\\Users\\653dl\\KKLHY\\0_image\\Yang\\character.png")   # 캐릭터 이미지 불러오기
-character_size = character.get_rect().size # 캐릭터 가로,세로 크기 불러오기
-character_width =character_size[0] # 캐릭터의 가로 크기
-character_height = character_size[1] # 캐릭터의 세로 크기
-ch.x_pos = 0 # 화면 가로의 캐릭터 위치설정
-ch.y_pos = -80 + screen_height/2  # 화면 세로의 캐릭터 위치 설정
+character_width, character_height = ch.img_size(character) # 캐릭터의 가로, 세로 크기 설정
+ch.x_pos, ch.y_pos = 0,-80 + screen_height/2 # 캐릭터 위치 설정
 
 #이동할 좌표
 to_x = 0
@@ -52,9 +58,7 @@ character_speed = 1
 # 아이템 추가
 it = obj()
 item = it.img("C:\\Users\\653dl\\KKLHY\\0_image\\Yang\\ball.png")
-item_size = character.get_rect().size # 캐릭터 가로,세로 크기 불러오기
-item_width = item_size[0] # 캐릭터의 가로 크기
-item_height = item_size[1] # 캐릭터의 세로 크기
+item_width, item_height = it.img_size(item) # 아이템의 가로, 세로 크기 설정
 it.x_pos = 1300 # random
 it.y_pos = random.randint(0,screen_height - item_height) # random
 item_speed = 10
@@ -74,7 +78,6 @@ started = False # if 실행 제어조건
 while running:
   dt =clock.tick(60) # 게임화면의 초당 프레임 수를 설정
 
-
   for event in pygame.event.get(): # 어떤 이벤트가 발생하였는가?
     if event.type == pygame.QUIT: #창이 닫히는 이벤트가 발생하였는가?
       running = False # 게임이 진행중이 아님
@@ -88,8 +91,6 @@ while running:
         to_y -= character_speed
       elif event.key == pygame.K_DOWN: #캐릭터를 아래로
         to_y += character_speed
-
-
 
     if event.type == pygame.KEYUP: #방향키를 떼면 멈춤
       if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
@@ -152,11 +153,10 @@ while running:
   # 출력 할 글자 색상
   timer = game_font.render(str(int(elapsed_time)), True, (255,0,0))
   tscore = game_font.render(str(int(score)),True,(255,0,0))
-  screen.blit(timer, (10, 10))
-  screen.blit(tscore,(1110,10))
+  ch.show(timer,10,10)
+  ch.show(tscore,1110,10)
 
 # 만약 시간이 0 이하이면 게임 종료
-
 
   pygame.display.update() # 게임화면을 다시 그리기!
 
