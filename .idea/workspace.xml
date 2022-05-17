@@ -5,23 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5812d52a-aaaa-4520-9e25-db93133cc81c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/05_13 item.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Ver_0.05.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ver_0.05.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/아이템/n_it1.png" beforeDir="false" afterPath="$PROJECT_DIR$/아이템/n_it1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/아이템/n_it2.png" beforeDir="false" afterPath="$PROJECT_DIR$/아이템/n_it2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/아이템/n_it3.png" beforeDir="false" afterPath="$PROJECT_DIR$/아이템/n_it3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/아이템/p_it1.png" beforeDir="false" afterPath="$PROJECT_DIR$/아이템/p_it1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/아이템/p_it2.png" beforeDir="false" afterPath="$PROJECT_DIR$/아이템/p_it2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/아이템/p_it3.png" beforeDir="false" afterPath="$PROJECT_DIR$/아이템/p_it3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/아이템/p_it4.png" beforeDir="false" afterPath="$PROJECT_DIR$/아이템/p_it4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/아이템/아이템/n_it1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/아이템/아이템/n_it2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/아이템/아이템/n_it3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/아이템/아이템/p_it1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/아이템/아이템/p_it2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/아이템/아이템/p_it3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/아이템/아이템/p_it4.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

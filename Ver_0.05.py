@@ -64,22 +64,22 @@ score = 0
 
 # 아이템 설정
 p_it0 = obj()
-p_item0 = p_it0.img("/Users/ho/Git/KKLHY/아이템/아이템/p_it1.png")
+p_item0 = p_it0.img("/Users/ho/Git/KKLHY/아이템/p_it1.png")
 p_item0_width, p_item0_height = p_it0.img_size(p_item0) # 아이템의 가로, 세로 크기 설정
 
 # p_item
 p_it1 = obj()
 p_it2 = obj()
 p_it3 = obj()
-p_item1 = p_it1.img("/Users/ho/Git/KKLHY/아이템/아이템/p_it2.png")
+p_item1 = p_it1.img("/Users/ho/Git/KKLHY/아이템/p_it2.png")
 p_item1_width, p_item1_height = p_it1.img_size(p_item1)  # 아이템의 가로, 세로 크기 설정
 p_it1.x_pos, p_it1.y_pos = 1300, random.randint(0, screen_height - p_item1_height)  # 아이템 위치 설정(random)
 p_it1.speed = 5
-p_item2 = p_it2.img("/Users/ho/Git/KKLHY/아이템/아이템/p_it3.png")
+p_item2 = p_it2.img("/Users/ho/Git/KKLHY/아이템/p_it3.png")
 p_item2_width, p_item2_height = p_it2.img_size(p_item2)  # 아이템의 가로, 세로 크기 설정
 p_it2.x_pos, p_it2.y_pos = 1300, random.randint(0, screen_height - p_item2_height)  # 아이템 위치 설정(random)
 p_it2.speed = 5
-p_item3 = p_it3.img("/Users/ho/Git/KKLHY/아이템/아이템/p_it4.png")
+p_item3 = p_it3.img("/Users/ho/Git/KKLHY/아이템/p_it4.png")
 p_item3_width, p_item3_height = p_it3.img_size(p_item2)  # 아이템의 가로, 세로 크기 설정
 p_it3.x_pos, p_it3.y_pos = 1300, random.randint(0, screen_height - p_item3_height)  # 아이템 위치 설정(random)
 p_it3.speed = 5
@@ -88,15 +88,15 @@ p_it3.speed = 5
 N_it1 = obj()
 N_it2 = obj()
 N_it3 = obj()
-N_item1 = N_it1.img("/Users/ho/Git/KKLHY/아이템/아이템/n_it1.png")
+N_item1 = N_it1.img("/Users/ho/Git/KKLHY/아이템/n_it1.png")
 N_item1_width, N_item1_height = N_it1.img_size(N_item1)  # 아이템의 가로, 세로 크기 설정
 N_it1.x_pos, N_it1.y_pos = 1300, random.randint(0, screen_height - N_item1_height)  # 아이템 위치 설정(random)
 N_it1.speed = 5
-N_item2 = p_it1.img("/Users/ho/Git/KKLHY/아이템/아이템/n_it2.png")
+N_item2 = p_it1.img("/Users/ho/Git/KKLHY/아이템/n_it2.png")
 N_item2_width, N_item2_height = N_it2.img_size(N_item2)  # 아이템의 가로, 세로 크기 설정
 N_it2.x_pos, N_it2.y_pos = 1300, random.randint(0, screen_height - N_item2_height)  # 아이템 위치 설정(random)
 N_it2.speed = 5
-N_item3 = p_it1.img("/Users/ho/Git/KKLHY/아이템/아이템/n_it3.png")
+N_item3 = p_it1.img("/Users/ho/Git/KKLHY/아이템/n_it3.png")
 N_item3_width, N_item3_height = N_it3.img_size(N_item3)  # 아이템의 가로, 세로 크기 설정
 N_it3.x_pos, N_it3.y_pos = 1300, random.randint(0, screen_height - N_item3_height)  # 아이템 위치 설정(random)
 N_it3.speed = 5
