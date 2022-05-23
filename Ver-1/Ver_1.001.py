@@ -1,6 +1,11 @@
 import pygame
 import random
 
+
+# 속도 바꾸기
+# 충돌처리
+# 중복생성
+
 pygame.init()  # 초기화
 
 
@@ -10,7 +15,7 @@ screen_height = 800  # 세로크기
 screen = pygame.display.set_mode((screen_width, screen_height))
 
 # 화면 타이틀 설정
-pygame.display.set_caption("Stage-2")  # 게임 이름
+pygame.display.set_caption("KKLHY")  # 게임 이름
 
 # FPS
 clock = pygame.time.Clock()
@@ -44,10 +49,9 @@ class obj:
     def show(self, k, a, b):
         screen.blit(k, (a, b))  # 배경 그리기
 
-    def copy(self,item,name,x,y): #아이템 복제
+    def copy(self,item,name): #아이템 복제
         for i in self.items:
-            i[x] -= y
-
+            i[0] -= 3
             #충돌처리
             i_rect = name.get_rect()
             i_rect.left = i[0]
@@ -75,28 +79,28 @@ ch.speed = 1  # 이동 속도
 score = 0
 
 # 아이템 설정
-R_it = obj()
-UP_it = obj()
+p_it0 = obj()
+p_item0 = p_it0.img("/Users/ho/Git/KKLHY/아이템/p_it1.png")
+p_item0_width, p_item0_height = p_it0.img_size(p_item0) # 아이템의 가로, 세로 크기 설정
 
-R_item = R_it.img("/Users/ho/Git/KKLHY/아이템/p_it1.png")
-UP_item = UP_it.img("/Users/ho/Git/KKLHY/아이템/p_it1.png")
-R_item_width, R_item_height = R_it.img_size(R_item) # 아이템의 가로, 세로 크기 설정
-UP_item_width, UP_item_height = UP_it.img_size(R_item)
 
 # 아이템 좌표
-R_it.x_pos, R_it.y_pos = 1300, random.randint(0, screen_height - R_item_height)  # 아이템 위치 설정(random)
-R_it.x_pos, R_it.y_pos = random.randint(0, screen_width - R_item_width), 0
-R_it.speed = 3
-UP_it.speed = 3
+p_it0.x_pos, p_it0.y_pos = 1300, random.randint(0, screen_height - p_item0_height)  # 아이템 위치 설정(random)
+
+p_it0.speed = 3
 
 
-random_time = random.randint(10,50) # 아이템 젠시간 설정
+
+
+random_time = random.randint(10,100) # 아이템 젠시간 설정
 item_time = 0
-elapsed_t = 0
 
 
 # 폰트 정의
 game_font = pygame.font.Font(None, 40)  # 폰트 객체  생성(폰트,크기)
+
+# 총 시간 (총시간을 이용하면 타이머 생성가능)
+total_time = 10
 
 # 시작 시간정보
 start_ticks = pygame.time.get_ticks()  # 시작 tick 을 받아옴
@@ -145,47 +149,37 @@ while running:
         ch.y_pos = h
 
     # 아이템 이동처리
-    R_it.x_pos -= R_it.speed
-    UP_it.y_pos += UP_it.speed
+    p_it0.x_pos -= p_it0.speed
     # 아이템이 화면 밖으로 나갔을경우
-    if R_it.x_pos < 0:
-        R_it.x_pos = 1300
-        R_it.y_pos = random.randint(0, screen_height - R_item_height)
-    if UP_it.y_pos > 800:
-        UP_it.y_pos = 0
-        UP_it.x_pos = random.randint(0,screen_width - R_item_width) #R width 수정하기
+    if p_it0.x_pos < 0:
+        p_it0.x_pos = 1300
+        p_it0.y_pos = random.randint(0, screen_height - p_item0_height)
 
     # 충돌 처리
     character_rect = ch.rect(character, ch)
-    item_rect = R_it.rect(R_item, R_it)
+    item_rect = p_it0.rect(p_item0, p_it0)
 
     # 충돌 체크
     if character_rect.colliderect(item_rect):  # colliderect함수는 사각형 부분이 () 안의 값과 충동이 있었는지 체크하는 함수
         print("충돌했다")
-        R_it.x_pos = 1300
-        R_it.y_pos = random.randint(0, screen_height - R_item_height)
+        p_it0.x_pos = 1300
+        p_it0.y_pos = random.randint(0, screen_height - p_item0_height)
         score += 100
 
     ch.show(background, 0, 0)  # 배경 그리기
     ch.show(character, ch.x_pos, ch.y_pos)  # 캐릭터 그리기
-    R_it.show(R_item, R_it.x_pos, R_it.y_pos)  # 아이템 그리기
-    UP_it.show(UP_item, UP_it.x_pos, UP_it.y_pos)
+    p_it0.show(p_item0, p_it0.x_pos, p_it0.y_pos)  # 아이템 그리기
 
 
 # ---------- 아이템
     item_time += 1
-    elapsed_t += 1
 
     if item_time == random_time:
         item_time = 0
-        if  elapsed_t < 300 or 600 < elapsed_t:
-            R_it.items.append([1300, random.randint(0, screen_height - R_item_height)])
-        if elapsed_t >= 300:
-            UP_it.items.append([random.randint(0, screen_width - R_item_width), 0])
+        p_it0.items.append([1300, random.randint(0, screen_height - p_item0_height)])
 
     #copy 아이템 그리기
-    R_it.copy(R_it,R_item,0,3)
-    UP_it.copy(UP_it,UP_item,1,-3)
+    p_it0.copy(p_it0,p_item0)
 
  #----------------------------------
 
@@ -215,4 +209,3 @@ pygame.time.delay(2000)
 
 # pygame 종료!
 pygame.quit()
-
