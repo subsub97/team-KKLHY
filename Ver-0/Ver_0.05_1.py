@@ -177,7 +177,7 @@ while running:
 
     # 적 생성
     if elapsed_time < total_time:
-        if len(enemy_list) <= 70:
+        if len(enemy_list) <= 80:
             enemy_list.append(enemy_class())
 
     # 충돌 처리
