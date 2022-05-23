@@ -31,7 +31,6 @@ character_to_x = 0
 character_to_y = 0
 
 enemy_list = list()   # 적 생성할 때마다 enemy_class 객체 하나씩 담기
-# 적이 맵 밖으로 나갔을 경우 해당 객체 리스트에서 삭제
 
 
 class enemy_class:
@@ -48,7 +47,7 @@ class enemy_class:
 
     def __init__(self):
         self.enemy_speed = random.choice(
-            [0.5, 1.0, 1.3, 1.5, 2.0, 2.5, 3.0])   # 적 스피드 랜덤
+            [0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5])   # 적 스피드 랜덤
         self.enemy_spawnPoint = random.choice(
             ['UP', 'DOWN', 'LEFT', 'RIGHT'])    # 적 스폰지점 랜덤
 
