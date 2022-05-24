@@ -38,7 +38,6 @@ class obj:
     def copy(self,item,name,x,y): #아이템 복제
         for i in self.items:
             i[x] -= y
-
             #충돌처리
             i_rect = name.get_rect()
             i_rect.left = i[0]
@@ -60,25 +59,22 @@ ch.speed = 1  # 이동 속도
 score = 0
 
 # 아이템 설정
+#아이템변수 = obj() 아이템변수 선언
 R_it = obj()
 UP_it = obj()
 
-R_item = R_it.img("/Users/ho/Git/KKLHY/아이템/p_it1.png")
-UP_item = UP_it.img("/Users/ho/Git/KKLHY/아이템/p_it1.png")
+#아이템 크기설정
+R_item = R_it.img("/Users/ho/Git/KKLHY/1_image/F.png")
+UP_item = UP_it.img("/Users/ho/Git/KKLHY/1_image/F.png")
 R_item_width, R_item_height = R_it.img_size(R_item) # 아이템의 가로, 세로 크기 설정
-UP_item_width, UP_item_height = UP_it.img_size(R_item)
+UP_item_width, UP_item_height = UP_it.img_size(UP_item)
 
-# 아이템 좌표
-R_it.x_pos, R_it.y_pos = 1300, random.randint(0, screen_height - R_item_height)  # 아이템 위치 설정(random)
-R_it.x_pos, R_it.y_pos = random.randint(0, screen_width - R_item_width), 0
-R_it.speed = 3
-UP_it.speed = 3
-
+# 중복으로 만들 필요없어서 삭제
 
 random_time = random.randint(10,50) # 아이템 젠시간 설정
 item_time = 0
+# 장애물 생성 조건변수
 elapsed_t = 0
-
 
 # 폰트 정의
 game_font = pygame.font.Font(None, 40)  # 폰트 객체  생성(폰트,크기)
@@ -134,7 +130,7 @@ while running:
         R_it.y_pos = random.randint(0, screen_height - R_item_height)
     if UP_it.y_pos > 800:
         UP_it.y_pos = 0
-        UP_it.x_pos = random.randint(0,screen_width - R_item_width) #R width 수정하기
+        UP_it.x_pos = random.randint(0,screen_width - UP_item_width) #R width 수정하기
 
     # 충돌 처리
     character_rect = ch.rect(character, ch)
@@ -163,8 +159,12 @@ while running:
             R_it.items.append([1300, random.randint(0, screen_height - R_item_height)])
         if elapsed_t >= 300:
             UP_it.items.append([random.randint(0, screen_width - R_item_width), 0])
+        #if elapsed_t >= 600: 왼쪽에서 오른쪽
+            #
 
     #copy 아이템 그리기
+    #item.copy(변수명,변수,x또는y,방향)
+
     R_it.copy(R_it,R_item,0,3)
     UP_it.copy(UP_it,UP_item,1,-3)
 

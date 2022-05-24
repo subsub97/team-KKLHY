@@ -7,9 +7,6 @@
     <list default="true" id="5812d52a-aaaa-4520-9e25-db93133cc81c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Ver-1/Ver_1.001.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ver-1/Ver_1.001.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/캐릭터/Step 0,2,4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/캐릭터/Step 1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/캐릭터/Step 3.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +50,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.asdf">
+  <component name="RunManager" selected="Python.Ver_1.001">
     <configuration name="Ver_0.02py" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="KKLHY" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -161,8 +158,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.asdf" />
         <item itemvalue="Python.Ver_1.001" />
+        <item itemvalue="Python.asdf" />
         <item itemvalue="Python.Ver_0.05" />
         <item itemvalue="Python.Ver_0.04" />
         <item itemvalue="Python.Ver_0.02py" />
