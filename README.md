@@ -1,11 +1,11 @@
 ### Team-KKLHY
 오픈소스 1팀 프로젝트 저장소<br>
 #### 팀원
-+ [GitHub](https://github.com/HwangBBang) 황병훈 / 팀장,계획서 / Stage.#0 
-+ [GitHub](https://github.com/123ksj) 김수정 / 진행현황작성 / Stage.#1 
-+ [GitHub](https://github.com/subsub97) 김득호 / 개발팀장 / Stage.#1 
-+ [GitHub](https://github.com/YangJinHyeok) 양진혁 / 계획서,자료조사 / Stage.#2 
-+ [GitHub](https://github.com/sugyeong-lee) 이수경 / 알고리즘 및 설계도 작성 /Stage.#2 
++ [GitHub](https://github.com/HwangBBang) 황병훈 / 팀장,계획서 / Stage.#0, #1 
++ [GitHub](https://github.com/123ksj) 김수정 / 진행현황작성 / Stage.#1, #2 
++ [GitHub](https://github.com/subsub97) 김득호 / 개발팀장 / Stage.#1, #2
++ [GitHub](https://github.com/YangJinHyeok) 양진혁 / 계획서,자료조사 / Stage.#1, #3 
++ [GitHub](https://github.com/sugyeong-lee) 이수경 / 알고리즘 및 설계도 작성 /Stage.#1, #3
 
 ## 1팀 사이드프로젝트를 소개합니다.
 
