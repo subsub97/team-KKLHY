@@ -57,7 +57,8 @@ class obj:
 
 
 ch = obj()
-background = ch.img("0_image/Yang/background.png")  # 배경 이미지 불러오기
+background = pygame.image.load(
+    "0_image/Yang/background.png")  # 배경 이미지 불러오기
 
 # 캐릭터 설정
 character = ch.img("0_image/Yang/character.png")  # 캐릭터 이미지 불러오기
@@ -76,9 +77,9 @@ UP_it = obj()
 L_it = obj()
 
 # 아이템 크기설정
-R_item = R_it.img("1_image/F.png")
-UP_item = UP_it.img("1_image/F.png")
-L_item = L_it.img("1_image/F.png")
+R_item = R_it.img("1_image/F_1.png")
+UP_item = UP_it.img("1_image/F_1.png")
+L_item = L_it.img("1_image/F_1.png")
 
 R_item_width, R_item_height = R_it.img_size(R_item)  # 아이템의 가로, 세로 크기 설정
 UP_item_width, UP_item_height = UP_it.img_size(UP_item)
@@ -86,7 +87,7 @@ L_item_width, L_item_height = L_it.img_size(L_item)
 
 # 중복으로 만들 필요없어서 삭제
 
-random_time = random.randint(0, 30)  # 아이템 젠시간 설정
+random_time = random.randint(10, 30)  # 아이템 젠시간 설정
 item_time = 0
 # 장애물 생성 조건변수
 elapsed_t = 0
