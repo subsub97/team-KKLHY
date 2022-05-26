@@ -1,11 +1,11 @@
 ### Team-KKLHY
 오픈소스 1팀 프로젝트 저장소<br>
 #### 팀원
-+ [GitHub](https://github.com/HwangBBang) 황병훈 / 팀장,계획서 / Stage.#0 
-+ [GitHub](https://github.com/123ksj) 김수정 / 진행현황작성 / Stage.#1 
-+ [GitHub](https://github.com/subsub97) 김득호 / 개발팀장 / Stage.#1 
-+ [GitHub](https://github.com/YangJinHyeok) 양진혁 / 계획서,자료조사 / Stage.#2 
-+ [GitHub](https://github.com/sugyeong-lee) 이수경 / 알고리즘 및 설계도 작성 /Stage.#2 
++ [GitHub](https://github.com/HwangBBang) 황병훈 / 팀장,계획서 / Stage.#0, #1 
++ [GitHub](https://github.com/123ksj) 김수정 / 진행현황작성 / Stage.#1, #2 
++ [GitHub](https://github.com/subsub97) 김득호 / 개발팀장 / Stage.#1, #2
++ [GitHub](https://github.com/YangJinHyeok) 양진혁 / 계획서,자료조사 / Stage.#1, #3 
++ [GitHub](https://github.com/sugyeong-lee) 이수경 / 알고리즘 및 설계도 작성 /Stage.#1, #3
 
 ## 1팀 사이드프로젝트를 소개합니다.
 
@@ -17,8 +17,11 @@ pygame 라이브러리와 git 을 사용해 게임을 개발하고 있습니다.
 
 #1. ITEM STAGE <br>
 > 횡스크롤 형식의 게임이며, 여러가지 아이템들이  -x 방향으로 이동합니다. <br>
-> 양의 점수를 주는 아이템을 획득해서 목표점수를 달성한다면 Stage.#1 을 탈출합니다.
-
+> 양의 점수를 주는 아이템을 획득해서 목표점수를 달성한다면 Stage.#1 을 탈출합니다. <br>
+> **아이템 :**
+> <img src = "아이템/p_it1.png">,<img src = "아이템/p_it2.png">,<img src = "아이템/p_it3.png">,<img src = "아이템/p_it4.png">,<img src = "아이템/n_it1.png">,<img src = "아이템/n_it2.png">,<img src = "아이템/n_it3.png">
+> 
+> 
 #2. MID EXAM STAGE<br>
 > 모든 방향에서 장애물들이 날라옵니다. 이것을 피하고 생존한다면 Stage.#2 을 탈출합니다.
 
