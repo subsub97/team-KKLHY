@@ -17,9 +17,17 @@ pygame 라이브러리와 git 을 사용해 게임을 개발하고 있습니다.
 
 #1. ITEM STAGE <br>
 > 횡스크롤 형식의 게임이며, 여러가지 아이템들이  -x 방향으로 이동합니다. <br>
-> 양의 점수를 주는 아이템을 획득해서 목표점수를 달성한다면 Stage.#1 을 탈출합니다. <br>
-> **아이템 :**
-> <img src = "아이템/p_it1.png">,<img src = "아이템/p_it2.png">,<img src = "아이템/p_it3.png">,<img src = "아이템/p_it4.png">,<img src = "아이템/n_it1.png">,<img src = "아이템/n_it2.png">,<img src = "아이템/n_it3.png">
+> 양의 점수를 주는 아이템을 획득하고 음의 점수를 주는 아이템은 회피해야하한다. <br>
+> *60초 내에 10000점 도달* 해당 목표를 달성하면 Stage.#1 을 탈출합니다. <br><br>
+> *30초를 초과* OR *5000점 이상* 일 때, <br> 
+>> 양의점수를 주는 아이템 생성빈도 Up<br>
+>> 음의점수를 주는 아이템 생성빈도 Down<br>
+>
+> **아이템 :** <br>
+> **+200 :** <img src = "아이템/p_it1.png">,<img src = "아이템/p_it2.png">,<img src = "아이템/p_it3.png">,<img src = "아이템/p_it4.png"> <br><br>
+> **-400 :** <img src = "아이템/n_it1.png">,<img src = "아이템/n_it2.png">,<img src = "아이템/n_it3.png">
+> 
+> **캐릭터 :** <br>
 > 
 > 
 #2. MID EXAM STAGE<br>
