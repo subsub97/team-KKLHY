@@ -35,9 +35,9 @@ class obj:
     def show(self, k, a, b):
         screen.blit(k, (a, b))  # 배경 그리기
 
-    def copy(self,item,name,x,y): #아이템 복제
+    def copy(self,item,name,index_pos,speed):#아이템 복제
         for i in self.items:
-            i[x] -= y
+            i[index_pos] -= speed
             #충돌처리
             i_rect = name.get_rect()
             i_rect.left = i[0]
@@ -46,7 +46,7 @@ class obj:
             if i[0] <= 0:
                 item.items.remove(i)
             if character_rect.colliderect(i_rect):
-                print("충동 발생")
+                print("충돌 발생")
                 item.items.remove(i)
 ch = obj()
 background = ch.img("/Users/ho/Git/KKLHY/0_image/Yang/background.png")  # 배경 이미지 불러오기
