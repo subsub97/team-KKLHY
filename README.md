@@ -28,7 +28,7 @@ pygame 라이브러리와 git 을 사용해 게임을 개발하고 있습니다.
 > **-400 :** <img src = "아이템/n_it1.png">,<img src = "아이템/n_it2.png">,<img src = "아이템/n_it3.png">
 > 
 > **캐릭터 :** <br>
-> 
+> <img src = "캐릭터/Step_0_2_4.png">
 
 #2. MID EXAM STAGE<br>
 > 모든 방향에서 장애물들이 날라옵니다. 이것을 피하고 생존한다면 Stage.#2 을 탈출합니다.
@@ -37,7 +37,9 @@ pygame 라이브러리와 git 을 사용해 게임을 개발하고 있습니다.
 
 #3. FIN EXAM STAGE<br>
 > **캐릭터 :** <br>
-> <img src = "">
+> <img src = "캐릭터/teacher.png"> <br>
+> **무기 :**<br>
+>  <img src = "아이템/weapon.png">
 
 
 
