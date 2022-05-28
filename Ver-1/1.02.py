@@ -178,7 +178,7 @@ while running:
         p_items.append([p_it[p_itemIndex], 1300, random.randint(0, screen_height - p_it[p_itemIndex].rect().size[1])])
         # 빈리스트 추가                   [#item_1(객체)       ,     #item_1.x         ,      #item_1.y]
 
-    if random.randint(0, 20) == 0:
+    if random.randint(0, 10) == 0:
         F_itemIndex = random.randint(0,7)
         if F_itemIndex == 0 : #오른쪽
             F_items.append([F_it[F_itemIndex],1300, random.randint(0, screen_height - F_it[F_itemIndex].rect().size[1])])
@@ -214,6 +214,7 @@ while running:
     #for i in p_items:
     #   i[1] -= 5
     #   score += i[0].copy(p_items,200,i[1],i[2],i)
+
     for i in F_items:
         if i[0] == F_it[0]: # 오 -> 왼
             i[1] -= 5
