@@ -58,12 +58,17 @@ class item(obj):  # obj 를 상속 받는 아이템클래스
         self.x_pos = x
         self.y_pos = y
         self.show()
-        if self.x_pos <= 0:           # 객체의 x_pos 가 나가면
+        if self.x_pos <= -300:           # 객체의 x_pos 가 나가면
              items.remove(i)
         elif ch.rect().colliderect(self.rect()):
             sum += score
             items.remove(i)
+            if score == 0:
+                return "F"
+
         return sum
+
+
 
 
 background = pygame.image.load("/Users/ho/Git/KKLHY/0_image/Yang/background.png")  # 배경 이미지 불러오기
@@ -91,6 +96,16 @@ n_it = [
     item("/Users/ho/Git/KKLHY/아이템/n_it2.png"),
     item("/Users/ho/Git/KKLHY/아이템/n_it3.png")
 ]
+F_it = [
+    item("/Users/ho/Git/KKLHY/1_image/F.png"),
+    item("/Users/ho/Git/KKLHY/1_image/F.png"),
+    item("/Users/ho/Git/KKLHY/1_image/F.png"),
+    item("/Users/ho/Git/KKLHY/1_image/F.png"),
+    item("/Users/ho/Git/KKLHY/1_image/F.png"),
+    item("/Users/ho/Git/KKLHY/1_image/F.png"),
+    item("/Users/ho/Git/KKLHY/1_image/F.png"),
+    item("/Users/ho/Git/KKLHY/1_image/F.png")
+]
 # 아이템객체 위치 초기화
 for i in range(4):
     p_it[i].setRandomXY_pos()
@@ -98,7 +113,7 @@ for i in range(4):
 for i in range(3):
     n_it[i].setRandomXY_pos()
 
-n_items = [];p_items = []
+n_items = [];p_items = [];F_items = [] #아이템 복제를위한 빈리스트 [자신 이미지정보,x,y]
 
 # 폰트 정의
 game_font = pygame.font.Font(None, 40)  # 폰트 객체  생성(폰트,크기)
@@ -158,10 +173,32 @@ while running:
 
     # ---------- 아이템
 
-    if random.randint(0, 25) == 0:
+    if random.randint(0,40) == 0:
         p_itemIndex = random.randint(0, 3)
         p_items.append([p_it[p_itemIndex], 1300, random.randint(0, screen_height - p_it[p_itemIndex].rect().size[1])])
         # 빈리스트 추가                   [#item_1(객체)       ,     #item_1.x         ,      #item_1.y]
+
+    if random.randint(0, 20) == 0:
+        F_itemIndex = random.randint(0,7)
+        if F_itemIndex == 0 : #오른쪽
+            F_items.append([F_it[F_itemIndex],1300, random.randint(0, screen_height - F_it[F_itemIndex].rect().size[1])])
+        if F_itemIndex == 1 : # 위
+            F_items.append([F_it[F_itemIndex],random.randint(0, screen_width - F_it[F_itemIndex].rect().size[1]),0])
+        if F_itemIndex == 2: # 왼쪽
+            F_items.append([F_it[F_itemIndex],-14,random.randint(0, screen_height - F_it[F_itemIndex].rect().size[1])])
+        if F_itemIndex == 3: # 아래
+            F_items.append([F_it[F_itemIndex],random.randint(0, screen_width - F_it[F_itemIndex].rect().size[1]),810])
+        if F_itemIndex == 4: # 대각 왼쪽 위
+            F_items.append([F_it[F_itemIndex],random.randint(-300, 30 - F_it[F_itemIndex].rect().size[1]), random.randint(-400,200- F_it[F_itemIndex].rect().size[1])])
+        if F_itemIndex == 5: # 대각 왼쪽 아래
+            F_items.append([F_it[F_itemIndex],random.randint(-300, 30 - F_it[F_itemIndex].rect().size[1]), random.randint(500,1200- F_it[F_itemIndex].rect().size[1])])
+        if F_itemIndex == 6: # 대각 오른쪽 위
+            F_items.append([F_it[F_itemIndex],random.randint(900, 1500 - F_it[F_itemIndex].rect().size[1]), random.randint(-400,200- F_it[F_itemIndex].rect().size[1])])
+        if F_itemIndex == 7: # 대각 오른쪽 아래
+            F_items.append([F_it[F_itemIndex],random.randint(900, 1500 - F_it[F_itemIndex].rect().size[1]), random.randint(500,1200- F_it[F_itemIndex].rect().size[1])])
+
+
+
 
     #for i in p_items:  # i[0]: 객체, i[1]: 객체의 x_pos, i[2]: 객체의 y_pos
      #   i[1] -= 5  # 객체의 x_pos 좌측으로 이동
@@ -174,9 +211,50 @@ while running:
          #   score += 200
           #  p_items.remove(i)
 
-    for i in p_items:
-        i[1] -= 5
-        i[0].copy(p_items,200,i[1],i[2],i)
+    #for i in p_items:
+    #   i[1] -= 5
+    #   score += i[0].copy(p_items,200,i[1],i[2],i)
+    for i in F_items:
+        if i[0] == F_it[0]: # 오 -> 왼
+            i[1] -= 5
+            check = i[0].copy(F_items,0,i[1],i[2],i)
+            if check == "F":
+                running = False
+        if i[0] == F_it[1]: # 위 -> 아래
+            i[2] += 5
+            check = i[0].copy(F_items, 0, i[1], i[2],i)
+            if check == "F":
+                running = False
+        if i[0] == F_it[2]: # 왼 -> 오
+            i[1] += 5
+            check = i[0].copy(F_items, 0, i[1], i[2],i)
+            if check == "F":
+                running = False
+        if i[0] == F_it[3]: #밑 -> 위
+            i[2] -= 5
+            check = i[0].copy(F_items, 0, i[1], i[2],i)
+            if check == "F":
+                running = False
+        if i[0] == F_it[4]: #밑 -> 위
+            i[1] += 5 ; i[2] += 5
+            check = i[0].copy(F_items, 0, i[1], i[2],i)
+            if check == "F":
+                running = False
+        if i[0] == F_it[5]: #밑 -> 위
+            i[1] += 5 ; i[2] -= 5
+            check = i[0].copy(F_items, 0, i[1], i[2],i)
+            if check == "F":
+                running = False
+        if i[0] == F_it[6]: #오른쪽위 -> 왼쪽 아래
+            i[1] -= 5 ; i[2] += 5
+            check = i[0].copy(F_items, 0, i[1], i[2],i)
+            if check == "F":
+                running = False
+        if i[0] == F_it[7]: #오른쪽 밑 -> 왼쪽 위
+            i[1] -= 5 ; i[2] -= 5
+            check = i[0].copy(F_items, 0, i[1], i[2],i)
+            if check == "F":
+                running = False
 
     # 리스트
 
