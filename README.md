@@ -1,7 +1,7 @@
 ### Team-KKLHY
 오픈소스 1팀 프로젝트 저장소<br>
 #### 팀원
-+ [GitHub](https://github.com/HwangBBang) 황병훈 / 팀장,계획서 / Stage.#0, #1 
++ [GitHub](https://github.com/HwangBBang) 황병훈 / 팀장,계획서, README작성 / Stage.#0, #1 
 + [GitHub](https://github.com/123ksj) 김수정 / 진행현황작성 / Stage.#1, #2 
 + [GitHub](https://github.com/subsub97) 김득호 / 개발팀장 / Stage.#1, #2
 + [GitHub](https://github.com/YangJinHyeok) 양진혁 / 계획서,자료조사 / Stage.#1, #3 
@@ -33,19 +33,22 @@ pygame 라이브러리와 git 을 사용해 게임을 개발하고 있습니다.
 **#2. MID EXAM STAGE**<br>
 > 모든 방향에서 장애물들이 날라옵니다. 이것을 피하고 생존한다면 Stage.#2 을 탈출합니다.
 > **아이템 :** <br>
-> <img src = "아이템/obj_F.png" width = 10%> <br>
+> <img src = "아이템/F.png" width = 10%> <br>
 
 **#3. FIN EXAM STAGE**<br>
 > 캐릭터가 과제를 발사 할 수 있습니다. 조작법은 SpaceBar 입니다. <br>
-> 무작위로 움직이는 교수님에게 과제를 던져 교수님의 체력을 감소시킵니다. <br>
+> 무작위로 움직이는 교수님에게 과제를 발사해 교수님의 체력을 감소시킵니다. <br>
 > 이때 교수님의 체력이 0 이하가 되면 Stage#3 을 탈출하고 게임이 종료됩니다. <br>
+>> 교수님 HP : 
+>> 캐릭터 HP:
 > 
 > **캐릭터 :** <br>
 > <img src = "캐릭터/Step_0_2_4.png">, <img src = "캐릭터/teacher.png"> <br>
 >
 >
 > **무기 :**<br>
->  <img src = "아이템/weapon.png">
+>  <img src = "아이템/weapon.png"> <br>
+>  <img src = "아이템/F.png"> <br>
 
 
 
