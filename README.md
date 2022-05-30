@@ -12,10 +12,10 @@
 pygame 라이브러리와 git 을 사용해 게임을 개발하고 있습니다.<br>
 게임은 크게 3가지 부분으로 나누어집니다.<br>
 
-#0. START PAGE & Record<br>
+**#0. START PAGE & Record**<br>
 > 시작화면,각스테이지에 대한 설명, 각 스테이지 시작과 끝을 연결합니다. <br>
 
-#1. ITEM STAGE <br>
+**#1. ITEM STAGE**<br>
 > 횡스크롤 형식의 게임이며, 여러가지 아이템들이  -x 방향으로 이동합니다. <br>
 > 양의 점수를 주는 아이템을 획득하고 음의 점수를 주는 아이템은 회피해야하한다. <br>
 > *60초 내에 10000점 도달* 해당 목표를 달성하면 Stage.#1 을 탈출합니다. <br><br>
@@ -30,14 +30,20 @@ pygame 라이브러리와 git 을 사용해 게임을 개발하고 있습니다.
 > **캐릭터 :** <br>
 > <img src = "캐릭터/Step_0_2_4.png">
 
-#2. MID EXAM STAGE<br>
+**#2. MID EXAM STAGE**<br>
 > 모든 방향에서 장애물들이 날라옵니다. 이것을 피하고 생존한다면 Stage.#2 을 탈출합니다.
 > **아이템 :** <br>
 > <img src = "아이템/obj_F.png" width = 10%> <br>
 
-#3. FIN EXAM STAGE<br>
+**#3. FIN EXAM STAGE**<br>
+> 캐릭터가 과제를 발사 할 수 있습니다. 조작법은 SpaceBar 입니다. <br>
+> 무작위로 움직이는 교수님에게 과제를 던져 교수님의 체력을 감소시킵니다. <br>
+> 이때 교수님의 체력이 0 이하가 되면 Stage#3 을 탈출하고 게임이 종료됩니다. <br>
+> 
 > **캐릭터 :** <br>
-> <img src = "캐릭터/teacher.png"> <br>
+> <img src = "캐릭터/Step_0_2_4.png">, <img src = "캐릭터/teacher.png"> <br>
+>
+>
 > **무기 :**<br>
 >  <img src = "아이템/weapon.png">
 
@@ -53,3 +59,4 @@ pygame 라이브러리와 git 을 사용해 게임을 개발하고 있습니다.
 + 1팀은 팀원 모두 주차별 일정을 작성하여 계획적인 프로젝트를 진행합니다.
 + 각 스테이지를 분업하여 보다 효율적으로 프로젝트를 진행합니다.
 + Visual Studio Code 의 Live Share 를 이용하여 협업 활동을 합니다.
++ git을 활용한 버전관리를 할 수 있습니다.
