@@ -158,14 +158,14 @@ while flags[0]: #flags[0]
     dt = clock.tick(60)  # 게임화면의 초당 프레임 수를 설정
     
     for event in pygame.event.get():  # 어떤 이벤트가 발생하였는가?
-        if event.type == pygame.QUIT:  # 창이 닫히는 이벤트가 발생하였는가?
+        if event.type == pygame.QUIT:  # 창이 닫히는 이벤트가 발생 하였는가?
             flags[0] = 0  # 게임이 진행중이 아님
         if event.type == pygame.KEYDOWN:  # 키가 눌러졌는지 확인
             if event.key == pygame.K_SPACE:
                 flags[0]= 0; flags[1]=1; 
     bglist[0].show()
-    PressStart = game_font.render(("Press Spacebar"), True, (255, 255, 255))
-    screen.blit(PressStart,(500,400))
+    PressStart = game_font.render(("Press Spacebar for Start"), True, (255, 255, 255))
+    screen.blit(PressStart,(430,400))
 
     # 게임화면을 다시 그리기!
     pygame.display.update()  
@@ -299,7 +299,8 @@ while flags[4]:  #넥스트
 
                 
     bglist[4].show()
-    PressStart = game_font.render(("Press Spacebar"), True, (255, 255, 255))
+    Press = game_font.render(("Press Spacebar for Next Stage"), True, (255, 255, 255))
+    screen.blit(Press,(400,600))
     
 
     # 게임화면을 다시 그리기!
@@ -447,7 +448,8 @@ while flags[4]:  #넥스트
                 ch.to_x = 0;ch.to_y = 0
 
     bglist[4].show()
-    PressStart = game_font.render(("Press Spacebar"), True, (255, 255, 255))
+    Press = game_font.render(("Press Spacebar for Next Stage"), True, (255, 255, 255))
+    screen.blit(Press,(400,600))
 
     pygame.display.update()
 
