@@ -56,7 +56,7 @@ pygame 라이브러리와 git 을 사용해 게임을 개발하고 있습니다.
 >  <img src = "아이템/weapon.png"> <br>
 >> 데미지 : 2 <br>
 
->  <img src = "아이템/teaxher_F2.png"> <br>
+>  <img src = "아이템/teacher_F2.png"> <br>
 >> 데미지 : 10 <br>
 >
 >  <img src = "아이템/heal.png"> <br>
