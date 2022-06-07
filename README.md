@@ -34,7 +34,7 @@ pygame 라이브러리와 git 을 사용해 게임을 개발하고 있습니다.
 | 값 | 이미지 |
 |------|-------------------------|
 | +200 | <img src = "아이템/p_it1.png">,<img src = "아이템/p_it2.png">,<img src = "아이템/p_it3.png">,<img src = "아이템/p_it4.png"> |
-| -400 | <img src = "아이템/n_it1.png">,<img src = "아이템/n_it2.png">,<img src = "아이템/n_it3.png"> |
+| -200 | <img src = "아이템/n_it1.png">,<img src = "아이템/n_it2.png">,<img src = "아이템/n_it3.png"> |
 
 > **캐릭터 :** <br>
 > <img src = "캐릭터/Step_0_2_4.png">
